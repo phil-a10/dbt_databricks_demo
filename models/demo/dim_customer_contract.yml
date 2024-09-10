@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dim_customer_contract
+    columns:
+    - name: CustomerContractKey 
+      description: unique customer identifier
+      tests:
+        - unique
+        - not_null
+    - name:  ContractId
+      description: unique customer identifier
+      tests:
+        - unique
+        - not_null

@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_purchase_order
+    columns:
+    - name: CommercialId
+      description: unique identifier for fact_purchase_order
+      tests:
+        - unique
+        - not_null
+    - name: CustomerContractKey       
+      data_tests:
+        - relationships:
+            to: ref('dim_customer_contract')
+            field: CustomerContractKey             
+    

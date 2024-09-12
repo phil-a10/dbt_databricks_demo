@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: pmo_portal
+    description: Data from the PMO Portal
+    freshness:
+      warn_after: {count: 7, period: hour}
+      error_after: {count: 14, period: day}
+    loaded_at_field: updated_date_time
+    tables:
+      - name: contract
+      - name: purchase_order
+      - name: commercial

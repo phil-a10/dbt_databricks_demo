@@ -5,11 +5,11 @@ models:
     columns:
     - name: CustomerContractKey 
       description: unique customer identifier
-      tests:
+      data_tests:
         - unique
         - not_null
     - name:  ContractId
       description: unique customer identifier
-      tests:
+      data_tests:
         - unique
         - not_null

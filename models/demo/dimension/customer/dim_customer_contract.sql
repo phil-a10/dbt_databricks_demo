@@ -1,5 +1,6 @@
 {{ config(
-    tags=["dim"]) }}
+    tags=["dim"],
+    materialization='table') }}
 
 select  
         {{ dbt_utils.generate_surrogate_key(['con.ContractId']) }} as CustomerContractKey,

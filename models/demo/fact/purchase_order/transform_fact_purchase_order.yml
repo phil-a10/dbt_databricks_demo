@@ -1,12 +1,11 @@
 version: 2
 
 models:
-  - name: fact_purchase_order
+  - name: transform_fact_purchase_order
     columns:
     - name: CommercialId
-      description: unique identifier for fact_purchase_order
-      tests:
-        - unique
+      description: not null in transform_fact_purchase_order
+      data_tests:
         - not_null
     - name: CustomerContractKey       
       data_tests:

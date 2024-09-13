@@ -17,5 +17,8 @@ models:
       data_tests:
         - relationships:
             to: ref('dim_customer_contract')
-            field: CustomerContractKey             
+            field: CustomerContractKey
+        - relationships:
+            to: ref('dim_purchase_order')
+            field: PurchaseOrderKey             
     

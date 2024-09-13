@@ -3,11 +3,17 @@ version: 2
 sources:
   - name: pmo_portal
     description: Data from the PMO Portal
-    freshness:
-      warn_after: {count: 7, period: hour}
-      error_after: {count: 14, period: day}
+    freshness: #default freshness for all tables in this source - check by running dbt source freshness
+      warn_after: {count: 14, period: day}
+      error_after: {count: 365, period: day}
     loaded_at_field: updated_date_time
     tables:
       - name: contract
+        loaded_at_field: inserted_date_time #override the column used to identify the freshness of this table
       - name: purchase_order
+        loaded_at_field: inserted_date_time
       - name: commercial
+        freshness: #override the default freshness for this table but not the column user to identify it
+        warn_after: {count: 7, period: hour}
+        error_after: {count: 14, period: day}
+      - name: client

@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_purchase_order
+    columns:
+    - name: PurchaseOrderKey 
+      description: unique purchase order identifier
+      data_tests:
+        - unique
+        - not_null

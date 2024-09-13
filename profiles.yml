@@ -6,6 +6,6 @@ dbt_databricks_demo:
       host: adb-2338236584991674.14.azuredatabricks.net
       http_path: sql/protocolv1/o/2338236584991674/0107-184505-cml0zwda
       schema: dbt
-      threads: 1
+      threads: 1 # The number of threads to use when running models in parallel
       token: "{{ env_var('DBT_ACCESS_TOKEN') }}"
       type: databricks
